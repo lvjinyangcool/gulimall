@@ -34,5 +34,10 @@ public interface AttrService extends IService<AttrEntity> {
     PageUtils queryBaseAttrPage(Map<String, Object> params, Long catelogId, String type);
 
     AttrRespVO getAttrInfo(Long attrId);
+
+    /**
+     * 在指定的集合里面挑出可检索的属性
+     */
+    List<Long> selectSearchAttrs(List<Long> attrIds);
 }
 

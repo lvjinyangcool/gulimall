@@ -1,5 +1,6 @@
 package com.atguigu.gulimall.ware.service.impl;
 
+import com.atguigu.common.to.SkuHasStockTo;
 import com.atguigu.common.utils.PageUtils;
 import com.atguigu.common.utils.Query;
 import com.atguigu.common.utils.R;
@@ -16,6 +17,7 @@ import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 
 @Service("wareSkuService")
@@ -81,6 +83,27 @@ public class WareSkuServiceImpl extends ServiceImpl<WareSkuDao, WareSkuEntity> i
         }else{
             wareSkuDao.addStock(skuId,wareId,skuNum);
         }
+    }
+
+    /**
+     * 这里存过库存数量  总库存-锁定库存
+     * SELECT SUM(stock - stock_locked) FROM `wms_ware_sku` WHERE sku_id = 1
+     *
+     * @param skuIds
+     * @return
+     */
+    @Override
+    public List<SkuHasStockTo> getSkuHasStock(List<Long> skuIds) {
+        return skuIds.stream().map(id -> {
+            SkuHasStockTo stockVo = new SkuHasStockTo();
+
+            // 查询当前sku的总库存量
+            stockVo.setSkuId(id);
+            // 这里库存可能为null 要避免空指针异常
+            Long skuStock = baseMapper.getSkuStock(id);
+            stockVo.setHasStock(skuStock != null && skuStock > 0);
+            return stockVo;
+        }).collect(Collectors.toList());
     }
 
 }
