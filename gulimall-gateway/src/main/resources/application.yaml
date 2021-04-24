@@ -50,7 +50,15 @@ spring:
             - Path=/api/**
           filters:
               - RewritePath=/api/(?<segment>.*), /renren-fast/$\{segment}
-
+        # 任何以gulimall.com结尾的域名转发到mall-product
+        - id: gulimall_host_route
+          uri: lb://gulimall-product
+          predicates:
+            - Host=gulimall.com
+        - id: gulimall_search_route
+          uri: lb://gulimall-search
+          predicates:
+            - Host=search.gulimall.com
 
 ## http://localhost:88/captcha.jpg
 server:
