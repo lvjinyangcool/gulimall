@@ -1,20 +1,23 @@
 package com.atguigu.gulimall.product.service.impl;
 
-import com.atguigu.gulimall.product.service.CategoryBrandRelationService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import java.util.Map;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.atguigu.common.utils.PageUtils;
 import com.atguigu.common.utils.Query;
-
 import com.atguigu.gulimall.product.dao.BrandDao;
 import com.atguigu.gulimall.product.entity.BrandEntity;
 import com.atguigu.gulimall.product.service.BrandService;
+import com.atguigu.gulimall.product.service.CategoryBrandRelationService;
+import com.atguigu.gulimall.product.vo.BrandVo;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
+
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 
 @Service("brandService")
@@ -53,6 +56,18 @@ public class BrandServiceImpl extends ServiceImpl<BrandDao, BrandEntity> impleme
 
             //TODO 更新其他关联
         }
+    }
+
+    @Override
+    public List<BrandVo> getBrandByIds(List<Long> brandIds) {
+        List<BrandEntity> brandS = baseMapper.selectList(new QueryWrapper<BrandEntity>().in("brand_id", brandIds));
+        return brandS.stream().map(brandEntity -> {
+            BrandVo brandVo = new BrandVo();
+            brandVo.setBrandId(brandEntity.getBrandId());
+            brandVo.setBrandName(brandEntity.getName());
+            return brandVo;
+        }).collect(Collectors.toList());
+
     }
 
 }

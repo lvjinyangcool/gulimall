@@ -14,5 +14,12 @@ import java.util.List;
 public interface ProductSaveService {
 
 
+	/**
+	 * 商品上架功能
+	 *
+	 * @param skuEsModels
+	 * @return
+	 * @throws IOException
+	 */
 	boolean productStatusUp(List<SkuEsModel> skuEsModels) throws IOException;
 }

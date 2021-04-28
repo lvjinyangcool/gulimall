@@ -71,7 +71,7 @@ public class AttrController {
     public R info(@PathVariable("attrId") Long attrId){
 //		AttrEntity attr = attrService.getById(attrId);
         AttrRespVO attrRespVO =  attrService.getAttrInfo(attrId);
-        return R.ok().put("attr", attrRespVO);
+        return R.ok().put("data", attrRespVO);
     }
 
     /**
