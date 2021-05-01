@@ -63,331 +63,335 @@
             </div>
         </b>
         <ul>
-            <li>
-                <a href="/static/search/#" class="li_2">你好，请登录</a>
+            <li th:if="${session.loginUser} ==null">
+                <a href="http://auth.glmall.com/login.html" class="li_2">你好，请登录</a>
             </li>
-            <li>
-                <a href="/static/search/#">免费注册</a>
+            <li th:if="${session.loginUser} !=null">
+                <a class="li_2">欢迎，[[${session.loginUser.username}]]</a>
+            </li>
+            <li th:if="${session.loginUser} !=null">
+                <a href="http://auth.glmall.com/oauth2.0/logout">退出登录</a>
+            </li>
+            <li th:if="${session.loginUser} ==null">
+                <a href="http://auth.glmall.com/reg.html" style="color: red;">免费注册</a>
             </li>
             <span>|</span>
-            <li>
-                <a href="/static/search/#">我的订单</a>
+            <li th:if="${session.loginUser} !=null">
+                <a>我的订单</a>
             </li>
             <span>|</span>
             <li class="header_wdjd" style="width:80px;">
-                <a href="/static/search/#">我的谷粒商城</a>
+                <a href="/list.html">我的谷粒商城</a>
                 <img src="/static/search/image/down-@1x.png"/>
-                <!--<b class="glyphicon glyphicon-menu-down"></b>-->
                 <div class="header_wdjd_txt">
                     <ul>
                         <li>
-                            <a href="/static/search/#">待处理订单</a>
+                            <a href="/list.html">待处理订单</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">消息</a>
+                            <a href="/list.html">消息</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">返修退换货</a>
+                            <a href="/list.html">返修退换货</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">我的回答</a>
+                            <a href="/list.html">我的回答</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">降价商品</a>
+                            <a href="/list.html">降价商品</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">我的关注</a>
+                            <a href="/list.html">我的关注</a>
                         </li>
                     </ul>
                     <ul>
                         <li>
-                            <a href="/static/search/#">我的京豆</a>
+                            <a href="/list.html">我的京豆</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">我的优惠券</a>
+                            <a href="/list.html">我的优惠券</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">我的白条</a>
+                            <a href="/list.html">我的白条</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">我的理财</a>
+                            <a href="/list.html">我的理财</a>
                         </li>
                     </ul>
                 </div>
             </li>
             <span>|</span>
             <li>
-                <a href="/static/search/#">谷粒商城会员</a>
+                <a href="/list.html">谷粒商城会员</a>
             </li>
             <span>|</span>
             <li>
-                <a href="/static/search/#">企业采购</a>
+                <a href="/list.html">企业采购</a>
             </li>
             <span>|</span>
             <li class="header_wdjd1">
-                <a href="/static/search/#">客户服务</a>
+                <a href="/list.html">客户服务</a>
                 <img src="/static/search/image/down-@1x.png"/>
-                <!--<b class="glyphicon glyphicon-menu-down"></b>-->
                 <div class="header_wdjd_txt">
                     <ul>
                         <p style="width:100%;">客户</p>
                         <li>
-                            <a href="/static/search/#">帮助中心</a>
+                            <a href="/list.html">帮助中心</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">售后服务</a>
+                            <a href="/list.html">售后服务</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">在线客服</a>
+                            <a href="/list.html">在线客服</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">意见建议</a>
+                            <a href="/list.html">意见建议</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">电话客服</a>
+                            <a href="/list.html">电话客服</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">客服邮箱</a>
+                            <a href="/list.html">客服邮箱</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">金融资讯</a>
+                            <a href="/list.html">金融资讯</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">售全球客服</a>
+                            <a href="/list.html">售全球客服</a>
                         </li>
                     </ul>
                     <ul>
                         <p style="width:100%;">商户</p>
                         <li>
-                            <a href="/static/search/#">合作招商</a>
+                            <a href="/list.html">合作招商</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">学习中心</a>
+                            <a href="/list.html">学习中心</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">商家后台</a>
+                            <a href="/list.html">商家后台</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">京麦工作台</a>
+                            <a href="/list.html">京麦工作台</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">商家帮助</a>
+                            <a href="/list.html">商家帮助</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">规则平台</a>
+                            <a href="/list.html">规则平台</a>
                         </li>
                     </ul>
                 </div>
             </li>
             <span>|</span>
             <li class="header_wzdh">
-                <a href="/static/search/#">网站导航</a>
+                <a href="/list.html">网站导航</a>
                 <img src="/static/search/image/down-@1x.png"/>
                 <!--<b class="glyphicon glyphicon-menu-down"></b>-->
                 <div class="header_wzdh_txt">
                     <ul style="width: 25%;">
                         <p style="width:100%;">特色主题</p>
                         <li>
-                            <a href="/static/search/#">谷粒商城试用</a>
+                            <a href="/list.html">谷粒商城试用</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">谷粒商城金融</a>
+                            <a href="/list.html">谷粒商城金融</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">全球售</a>
+                            <a href="/list.html">全球售</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">国际站</a>
+                            <a href="/list.html">国际站</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">谷粒商城会员</a>
+                            <a href="/list.html">谷粒商城会员</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">谷粒商城预售</a>
+                            <a href="/list.html">谷粒商城预售</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">买什么</a>
+                            <a href="/list.html">买什么</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">俄语站</a>
+                            <a href="/list.html">俄语站</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">装机大师</a>
+                            <a href="/list.html">装机大师</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">0元评测</a>
+                            <a href="/list.html">0元评测</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">定期送</a>
+                            <a href="/list.html">定期送</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">港澳售</a>
+                            <a href="/list.html">港澳售</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">优惠券</a>
+                            <a href="/list.html">优惠券</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">秒杀</a>
+                            <a href="/list.html">秒杀</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">闪购</a>
+                            <a href="/list.html">闪购</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">印尼站</a>
+                            <a href="/list.html">印尼站</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">谷粒商城金融科技</a>
+                            <a href="/list.html">谷粒商城金融科技</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">In货推荐</a>
+                            <a href="/list.html">In货推荐</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">陪伴计划</a>
+                            <a href="/list.html">陪伴计划</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">出海招商</a>
+                            <a href="/list.html">出海招商</a>
                         </li>
                     </ul>
                     <ul style="width: 20%;">
                         <p style="width:100%;">行业频道</p>
                         <li>
-                            <a href="/static/search/#">手机</a>
+                            <a href="/list.html">手机</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">智能数码</a>
+                            <a href="/list.html">智能数码</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">玩3c</a>
+                            <a href="/list.html">玩3c</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">电脑办公</a>
+                            <a href="/list.html">电脑办公</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">家用电器</a>
+                            <a href="/list.html">家用电器</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">谷粒商城智能</a>
+                            <a href="/list.html">谷粒商城智能</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">服装城</a>
+                            <a href="/list.html">服装城</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">美妆馆</a>
+                            <a href="/list.html">美妆馆</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">家装城</a>
+                            <a href="/list.html">家装城</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">母婴</a>
+                            <a href="/list.html">母婴</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">食品</a>
+                            <a href="/list.html">食品</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">运动户外</a>
+                            <a href="/list.html">运动户外</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">农资频道</a>
+                            <a href="/list.html">农资频道</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">整车</a>
+                            <a href="/list.html">整车</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">图书</a>
+                            <a href="/list.html">图书</a>
                         </li>
                     </ul>
                     <ul style="width: 21%;">
                         <p style="width:100%;">生活服务</p>
                         <li>
-                            <a href="/static/search/#">白条</a>
+                            <a href="/list.html">白条</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">谷粒商城金融App</a>
+                            <a href="/list.html">谷粒商城金融App</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">谷粒商城小金库</a>
+                            <a href="/list.html">谷粒商城小金库</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">理财</a>
+                            <a href="/list.html">理财</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">智能家电</a>
+                            <a href="/list.html">智能家电</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">话费</a>
+                            <a href="/list.html">话费</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">水电煤</a>
+                            <a href="/list.html">水电煤</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">彩票</a>
+                            <a href="/list.html">彩票</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">旅行</a>
+                            <a href="/list.html">旅行</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">机票酒店</a>
+                            <a href="/list.html">机票酒店</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">电影票</a>
+                            <a href="/list.html">电影票</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">谷粒商城到家</a>
+                            <a href="/list.html">谷粒商城到家</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">谷粒商城众测</a>
+                            <a href="/list.html">谷粒商城众测</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">游戏</a>
+                            <a href="/list.html">游戏</a>
                         </li>
                     </ul>
                     <ul style="width: 23%; border-right: 0;">
                         <p style="width:100%;">更多精选</p>
                         <li>
-                            <a href="/static/search/#">合作招商</a>
+                            <a href="/list.html">合作招商</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">谷粒商城通信</a>
+                            <a href="/list.html">谷粒商城通信</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">谷粒商城E卡</a>
+                            <a href="/list.html">谷粒商城E卡</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">企业采购</a>
+                            <a href="/list.html">企业采购</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">服务市场</a>
+                            <a href="/list.html">服务市场</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">办公生活馆</a>
+                            <a href="/list.html">办公生活馆</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">乡村招募</a>
+                            <a href="/list.html">乡村招募</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">校园加盟</a>
+                            <a href="/list.html">校园加盟</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">京友帮</a>
+                            <a href="/list.html">京友帮</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">谷粒商城社区</a>
+                            <a href="/list.html">谷粒商城社区</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">智能社区</a>
+                            <a href="/list.html">智能社区</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">游戏社区</a>
+                            <a href="/list.html">游戏社区</a>
                         </li>
                         <li>
-                            <a href="/static/search/#">知识产权维权</a>
+                            <a href="/list.html">知识产权维权</a>
                         </li>
                     </ul>
                 </div>
             </li>
             <span>|</span>
             <li class="header_sjjd">
-                <a href="/static/search/#">手机谷粒商城</a>
+                <a href="/list.html">手机谷粒商城</a>
                 <div class="header_sjjd_div">
                     <img src="/static/search/img/01.png"/>
                 </div>
@@ -767,7 +771,8 @@
         </div>
         <!--  便利面包屑  -->
         <div class="JD_ipone_one c">
-            <a th:href="${nav.link}" th:each="nav : ${result.navs}"><span th:text="${nav.name}"></span><span th:text="${nav.navValue}"></span> × </a>
+            <a th:href="${nav.link}" th:each="nav : ${result.navs}"><span th:text="${nav.name}"></span><span
+                    th:text="${nav.navValue}"></span> × </a>
         </div>
         <i><img src="/static/search/image/right-@1x.png" alt=""></i>
     </div>
@@ -822,7 +827,9 @@
                     </div>
                     <div class="sl_value">
                         <ul>
-                            <li th:each="catalog : ${result.catalogVOS}"><a th:href="${'javascript:searchProduct(&quot;catalog3Id&quot;, ' + catalog.catalogId + ')'}" th:text="${catalog.catalogName}">分类名字</a>
+                            <li th:each="catalog : ${result.catalogVOS}"><a
+                                    th:href="${'javascript:searchProduct(&quot;catalog3Id&quot;, ' + catalog.catalogId + ')'}"
+                                    th:text="${catalog.catalogName}">分类名字</a>
                             </li>
                         </ul>
                     </div>
@@ -840,13 +847,16 @@
                     </div>
                 </div>
                 <!--遍历所有需要展示的属性-->
-                <div class="JD_pre" th:each="attr : ${result.attrVOS}"  th:if="${!#lists.contains(result.attrIds,attr.attrId)}">
+                <div class="JD_pre" th:each="attr : ${result.attrVOS}"
+                     th:if="${!#lists.contains(result.attrIds,attr.attrId)}">
                     <div class="sl_key">
                         <span th:text="${attr.attrName}">属性名字</span>
                     </div>
                     <div class="sl_value">
                         <ul>
-                            <li th:each="val : ${attr.attrValue}"><a th:href="${'javascript:searchProduct(&quot;attrs&quot;, &quot;' + attr.attrId + '_' + val + '&quot;)'}" th:text="${val}">显示所有属性值</a></li>
+                            <li th:each="val : ${attr.attrValue}"><a
+                                    th:href="${'javascript:searchProduct(&quot;attrs&quot;, &quot;' + attr.attrId + '_' + val + '&quot;)'}"
+                                    th:text="${val}">显示所有属性值</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1037,14 +1047,30 @@
                         <!--  不能直接用 param.sort去判断 所以用p来做中间替换 p当作text类型来用-->
                         <div class="filter_top_left" th:with="p = ${param.sort}, priceRange = ${param.skuPrice}">
                             <!--                 如果 param.sort 是空或者 他是以 hotScore 开头的就设置高亮样式                  -->
-                            <a th:class="${(!#strings.isEmpty(p) && #strings.startsWith(p,'hotScore') && #strings.endsWith(p,'desc'))?'sort_a desc':'sort_a'}" sort="hotScore" th:attr="style=${(#strings.isEmpty(p) || #strings.startsWith(p,'hotScore'))?'color: #FFF;border-color:#e4393c;background: #e4393c':'color: #333;border-color:#ccc;background: #FFF'}" href="/list.html">综合排序 [[${(!#strings.isEmpty(p) && #strings.startsWith(p,'hotScore') && #strings.endsWith(p,'desc'))?'↓':'↑'}]]</a>
+                            <a th:class="${(!#strings.isEmpty(p) && #strings.startsWith(p,'hotScore') && #strings.endsWith(p,'desc'))?'sort_a desc':'sort_a'}"
+                               sort="hotScore"
+                               th:attr="style=${(#strings.isEmpty(p) || #strings.startsWith(p,'hotScore'))?'color: #FFF;border-color:#e4393c;background: #e4393c':'color: #333;border-color:#ccc;background: #FFF'}"
+                               href="/list.html">综合排序 [[${(!#strings.isEmpty(p) && #strings.startsWith(p,'hotScore') &&
+                                #strings.endsWith(p,'desc'))?'↓':'↑'}]]</a>
                             <!--   排序字段不能为空 并且字段为 saleCount 或者 skuPrice    -->
-                            <a th:class="${(!#strings.isEmpty(p) && #strings.startsWith(p,'saleCount') && #strings.endsWith(p,'desc'))?'sort_a desc':'sort_a'}" sort="saleCount" th:attr="style=${(!#strings.isEmpty(p) && #strings.startsWith(p,'saleCount'))?'color: #FFF;border-color:#e4393c;background: #e4393c':'color: #333;border-color:#ccc;background: #FFF'}" href="/list.html">销量 [[${(!#strings.isEmpty(p) && #strings.startsWith(p,'saleCount') && #strings.endsWith(p,'desc'))?'↓':'↑'}]]</a>
-                            <a th:class="${(!#strings.isEmpty(p) && #strings.startsWith(p,'skuPrice') && #strings.endsWith(p,'desc'))?'sort_a desc':'sort_a'}" sort="skuPrice" th:attr="style=${(!#strings.isEmpty(p) && #strings.startsWith(p,'skuPrice'))?'color: #FFF;border-color:#e4393c;background: #e4393c':'color: #333;border-color:#ccc;background: #FFF'}" href="/list.html">价格 [[${(!#strings.isEmpty(p) && #strings.startsWith(p,'skuPrice') && #strings.endsWith(p,'desc'))?'↓':'↑'}]]</a>
+                            <a th:class="${(!#strings.isEmpty(p) && #strings.startsWith(p,'saleCount') && #strings.endsWith(p,'desc'))?'sort_a desc':'sort_a'}"
+                               sort="saleCount"
+                               th:attr="style=${(!#strings.isEmpty(p) && #strings.startsWith(p,'saleCount'))?'color: #FFF;border-color:#e4393c;background: #e4393c':'color: #333;border-color:#ccc;background: #FFF'}"
+                               href="/list.html">销量 [[${(!#strings.isEmpty(p) && #strings.startsWith(p,'saleCount') &&
+                                #strings.endsWith(p,'desc'))?'↓':'↑'}]]</a>
+                            <a th:class="${(!#strings.isEmpty(p) && #strings.startsWith(p,'skuPrice') && #strings.endsWith(p,'desc'))?'sort_a desc':'sort_a'}"
+                               sort="skuPrice"
+                               th:attr="style=${(!#strings.isEmpty(p) && #strings.startsWith(p,'skuPrice'))?'color: #FFF;border-color:#e4393c;background: #e4393c':'color: #333;border-color:#ccc;background: #FFF'}"
+                               href="/list.html">价格 [[${(!#strings.isEmpty(p) && #strings.startsWith(p,'skuPrice') &&
+                                #strings.endsWith(p,'desc'))?'↓':'↑'}]]</a>
                             <a href="/list.html">评论分</a>
                             <a href="/list.html">上架时间</a>
                             <!--                                                                                   #strings.substringAfter(priceRange,"_")                            -->
-                            <input id="skuPriceFrom" type="number" style="width: 100px;margin-left: 30px" th:value="${#strings.isEmpty(priceRange)?'':#strings.substringBefore(priceRange,'_')}"> - <input id="skuPriceTo" type="number" style="width: 100px;" th:value="${#strings.isEmpty(priceRange)?'':#strings.substringAfter(priceRange,'_')}"> <button id="skuPriceSearchBtn">确定</button>
+                            <input id="skuPriceFrom" type="number" style="width: 100px;margin-left: 30px"
+                                   th:value="${#strings.isEmpty(priceRange)?'':#strings.substringBefore(priceRange,'_')}">
+                            - <input id="skuPriceTo" type="number" style="width: 100px;"
+                                     th:value="${#strings.isEmpty(priceRange)?'':#strings.substringAfter(priceRange,'_')}">
+                            <button id="skuPriceSearchBtn">确定</button>
                         </div>
                         <div class="filter_top_right">
                             <span class="fp-text">
@@ -1068,7 +1094,8 @@
                                 <ul id="tab">
                                     <li id="tab1" value="1">北京 <img src="/static/search/image/down-@1x.png" alt=""></li>
                                     <li id="tab2" value="2">朝阳 <img src="/static/search/image/down-@1x.png" alt=""></li>
-                                    <li id="tab3" value="3">三环以内 <img src="/static/search/image/down-@1x.png" alt=""></li>
+                                    <li id="tab3" value="3">三环以内 <img src="/static/search/image/down-@1x.png" alt="">
+                                    </li>
                                 </ul>
                                 <div id="container">
                                     <div id="content1" style="z-index: 1;">
@@ -1153,7 +1180,8 @@
                                 </li>
                                 <li>
                                     <a href="#" th:with="check=${param.hasStock}">
-                                        <input id="showHasStock" type="checkbox" th:checked="${#strings.equals(check,'1')?true:false}">
+                                        <input id="showHasStock" type="checkbox"
+                                               th:checked="${#strings.equals(check,'1')?true:false}">
                                         仅显示有货
                                     </a>
                                 </li>
@@ -1215,12 +1243,15 @@
                     <div class="filter_page">
                         <div class="page_wrap">
                             <span class="page_span1">
-                                <a class="page_a" th:attr="pn=${result.pageNum - 1}" th:href="${result.pageNum - 1}" th:if="${result.pageNum > 1}">
+                                <a class="page_a" th:attr="pn=${result.pageNum - 1}" th:href="${result.pageNum - 1}"
+                                   th:if="${result.pageNum > 1}">
                                     < 上一页
                                 </a>
-                                <a class="page_a" th:attr="pn=${nav},style=${nav == result.pageNum? 'border: 0;color:#ee2222;background: #fff':''}"
+                                <a class="page_a"
+                                   th:attr="pn=${nav},style=${nav == result.pageNum? 'border: 0;color:#ee2222;background: #fff':''}"
                                    th:each="nav : ${result.pageNavs}">[[${nav}]]</a>
-                                <a class="page_a" th:attr="pn=${result.pageNum + 1}" th:href="${result.pageNum + 1}" th:if="${result.pageNum < result.totalPages}">
+                                <a class="page_a" th:attr="pn=${result.pageNum + 1}" th:href="${result.pageNum + 1}"
+                                   th:if="${result.pageNum < result.totalPages}">
                                     下一页 >
                                 </a>
                             </span>
@@ -1989,10 +2020,10 @@
     $(".page_a").click(function () {
         var pn = $(this).attr("pn");
         var href = location.href;
-        if(href.indexOf("pageNum")!=-1){
+        if (href.indexOf("pageNum") != -1) {
             // 路劲包含这个就进行替换
             location.href = replaceAndAddParamVal(href, "pageNum", pn);
-        }else{
+        } else {
             location.href = location.href + "&pageNum=" + pn;
         }
         return false;
@@ -2030,7 +2061,7 @@
         $(this).toggleClass("desc")
         // 跳转到指定位置
         var sort = $(this).attr("sort");
-        sort = $(this).hasClass("desc")?sort + "_desc":sort+"_asc";
+        sort = $(this).hasClass("desc") ? sort + "_desc" : sort + "_asc";
         location.href = replaceAndAddParamVal(location.href, "sort", sort);
         return false;
     })
@@ -2040,20 +2071,20 @@
         // 默认样式 color: #333;border-color:#ccc;background: #FFF
         // 高亮样式 color: #FFF;border-color:#e4393c;background: #e4393c
         // 1.清空之前元素的样式 改变当前被点击的元素变成被选中状态
-        $(".sort_a").css({"color":"#333","border-color":"#ccc","background":"#FFF"})
+        $(".sort_a").css({"color": "#333", "border-color": "#ccc", "background": "#FFF"})
         // 去掉兄弟元素的标志
         $(".sort_a").each(function () {
-            var text = $(this).text().replace("↓","").replace("↑","");
+            var text = $(this).text().replace("↓", "").replace("↑", "");
             $(this).text(text);
         })
-        $(ele).css({"color":"#FFF","border-color":"#e4393c","background":"#e4393c"})
+        $(ele).css({"color": "#FFF", "border-color": "#e4393c", "background": "#e4393c"})
         // 2.改变升降序 被点击自动加上 desc的样式 再次点击就会取消
-        var text = $(ele).text().replace("↓","").replace("↑","");
+        var text = $(ele).text().replace("↓", "").replace("↑", "");
         $(ele).toggleClass("desc")
-        if($(ele).hasClass("desc")){
+        if ($(ele).hasClass("desc")) {
             // 降序
             text = text + "↓";
-        }else{
+        } else {
             text = text + "↑";
         }
         $(ele).text(text);
@@ -2071,9 +2102,9 @@
 
     $("#showHasStock").change(function () {
         // 如果是 true 选择有库存的
-        if($(this).prop('checked')){
-            location.href = replaceAndAddParamVal(location.href,"hasStock", 1)
-        }else{
+        if ($(this).prop('checked')) {
+            location.href = replaceAndAddParamVal(location.href, "hasStock", 1)
+        } else {
             // 没选中的状态
             var re = eval('/(hasStock=)([^&]*)/gi');
             location.href = (location.href + "").replace(re, '');

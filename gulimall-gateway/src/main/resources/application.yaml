@@ -55,6 +55,11 @@ spring:
           predicates:
             - Host=search.gulimall.com
 
+        - id: gulimall_auth_route
+          uri: lb://gulimall-auth-server
+          predicates:
+            - Host=auth.gulimall.com
+
         # 任何以gulimall.com结尾的域名转发到mall-product
         - id: gulimall_host_route
           uri: lb://gulimall-product

@@ -7,13 +7,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="gulimall-product" />
         <module name="gulimall-coupon" />
-        <module name="gulimall-order" />
+        <module name="gulimall-auth-server" />
         <module name="gulimall-ware" />
-        <module name="gulimall-third-party" />
         <module name="gulimall-search" />
         <module name="gulimall-gateway" />
-        <module name="gulimall-product" />
+        <module name="gulimall-third-party" />
+        <module name="gulimall-order" />
         <module name="renren-fast" />
         <module name="renren-generator" />
         <module name="gulimall-member" />
@@ -22,6 +23,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="gulimall" target="1.5" />
+      <module name="gulimall-auth-server" target="1.8" />
       <module name="gulimall-common" target="8" />
       <module name="gulimall-coupon" target="1.8" />
       <module name="gulimall-gateway" target="1.8" />
@@ -37,6 +39,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="gulimall-auth-server" options="-parameters" />
       <module name="gulimall-coupon" options="-parameters" />
       <module name="gulimall-gateway" options="-parameters" />
       <module name="gulimall-member" options="-parameters" />

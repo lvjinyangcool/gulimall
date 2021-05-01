@@ -31,6 +31,8 @@ spring:
     cache: false
     suffix: .html
     prefix: classpath:/templates/
+  session:
+    store-type: redis
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
@@ -44,6 +46,8 @@ server:
 logging:
   level:
     com.atguigu.gulimall: debug
+
+
 gulimall:
   thread:
     core-size: 10
