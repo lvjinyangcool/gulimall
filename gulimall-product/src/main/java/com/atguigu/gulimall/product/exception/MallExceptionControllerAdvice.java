@@ -36,6 +36,6 @@ public class MallExceptionControllerAdvice {
     public R handleException(Throwable throwable) {
 
         log.error("错误：", throwable);
-        return R.error(BizCodeEnum.UNKNOW_EXCEPTION.getCode(), BizCodeEnum.UNKNOW_EXCEPTION.getMsg());
+        return R.error(BizCodeEnum.UN_KNOW_EXCEPTION.getCode(), BizCodeEnum.UN_KNOW_EXCEPTION.getMsg());
     }
 }

@@ -73,7 +73,6 @@ public class MemberServiceImpl extends ServiceImpl<MemberDao, MemberEntity> impl
         entity.setEmail("xxx@gmail.com");
         entity.setGender(1);
         entity.setJob("JAVA");
-        baseMapper.insert(entity);
         memberDao.insert(entity);
     }
 
