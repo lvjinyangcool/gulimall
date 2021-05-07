@@ -13,7 +13,7 @@ public class AuthServerConstant {
     public static final String LOGIN_USER = "loginUser";
 
     /**
-     *
+     * 未登录提示
      */
     public static final String NOT_LOGIN = "请先进行登录";
 }
